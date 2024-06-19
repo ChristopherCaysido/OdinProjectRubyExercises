@@ -8,4 +8,6 @@ family = {  uncles: ["bob", "joe", "steve"],
             aunts: ["mary","sally","susan"]
           }
 
-          
+siblings = family.select{|k,v| k == :sisters || k == :brothers}
+arr_siblings = siblings.values.flatten
+print arr_siblings
