@@ -85,12 +85,12 @@ RSpec.describe 'Hash Exercises' do
 
   describe 'favorite categories exercise' do
 
-    xit 'returns an array of the keys' do
+    it 'returns an array of the keys' do
       my_favorites = { color: 'blue', number: 65, movie: 'Avengers: Endgame' }
       expect(favorite_categories(my_favorites)).to eq([:color, :number, :movie])
     end
 
-    xit 'returns an empty array when hash is empty' do
+    it 'returns an empty array when hash is empty' do
       my_favorites = {}
       expect(favorite_categories(my_favorites)).to eq([])
     end
@@ -98,17 +98,17 @@ RSpec.describe 'Hash Exercises' do
 
   describe 'favorite items exercise' do
 
-    xit 'returns an array with the string and integer values' do
+    it 'returns an array with the string and integer values' do
       my_favorites = { color: 'blue', number: 65, movie: 'Avengers: Endgame' }
       expect(favorite_items(my_favorites)).to eq(['blue', 65, 'Avengers: Endgame'])
     end
 
-    xit 'returns an array with the array and hash values' do
+    it 'returns an array with the array and hash values' do
       my_favorites = { color: ['orange', 'green'], number: { lucky: 7 } }
       expect(favorite_items(my_favorites)).to eq([['orange', 'green'], { lucky: 7 }])
     end
 
-    xit 'returns an empty array when hash is empty' do
+    it 'returns an empty array when hash is empty' do
       my_favorites = {}
       expect(favorite_items(my_favorites)).to eq([])
     end
@@ -116,21 +116,21 @@ RSpec.describe 'Hash Exercises' do
 
   describe 'merge favorites exercise' do
 
-    xit 'returns a hash with all key/value pairs when there is not a duplicate' do
+    it 'returns a hash with all key/value pairs when there is not a duplicate' do
       my_favorites = { color: 'blue', number: 65 }
       favorite_movie = { movie: 'Avengers: Endgame' }
       result = { color: 'blue', number: 65, movie: 'Avengers: Endgame' }
       expect(merge_favorites(my_favorites, favorite_movie)).to eq(result)
     end
 
-    xit 'returns a hash with an updated value when there is duplicate' do
+    it 'returns a hash with an updated value when there is duplicate' do
       my_favorites = { color: 'emerald green', movie: 'Avengers: Endgame' }
       favorite_movie = { movie: 'Avengers: Infinity War' }
       result = { color: 'emerald green', movie: 'Avengers: Infinity War' }
       expect(merge_favorites(my_favorites, favorite_movie)).to eq(result)
     end
 
-    xit 'returns a hash with all key/value pairs and an updated value when there is duplicate' do
+    it 'returns a hash with all key/value pairs and an updated value when there is duplicate' do
       my_favorites = { color: 'teal', number: 65 }
       new_favorites = { number: 42, movie: "The Hitchhiker's Guide to the Galaxy" }
       result = { color: 'teal', number: 42, movie: "The Hitchhiker's Guide to the Galaxy" }
